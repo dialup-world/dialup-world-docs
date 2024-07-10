@@ -620,3 +620,153 @@ The pairs can be split off to their own RJ11 cables as follows:
 | Violet/Green | 48 | 23 | Green/Violet |
 | Violet/Brown | 49 | 24 | Brown/Violet |
 | Violet/Slate | 50 | 25 | Slate/Violet |
+
+## Other Commands
+
+`csim` - test outbound calls from the IAD. For example:
+
+```
+csim start 5000
+```
+
+Annoying but useful POTS test commands:
+
+```
+test voice port 2/0 thl-sweep verbose
+
+test voice port 2/0 inject-tone local 1000hz
+test voice port 2/0 inject-tone local disable
+
+test voice port 2/0 inject-tone network 1000hz
+test voice port 2/0 inject-tone network disable 
+```
+
+Another hidden command: `test voice driver` should bring up heaps of options.
+
+## Initial Boot Log
+
+Before it was wiped.
+
+```
+
+System Bootstrap, Version 12.3(7r)T2, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2004 by cisco Systems, Inc.
+
+FPGA readonly version:00250025
+FPGA upgrade version :00250027
+Upgrade FPGA currently running
+c2400 processor with 262144 Kbytes of main memory
+Main memory is configured to 64 bit mode with parity disabled
+
+
+Readonly ROMMON initialized
+program load complete, entry point: 0x80008000, size: 0x1a0a0
+program load complete, entry point: 0x80008000, size: 0x1a0a0
+
+program load complete, entry point: 0x80008000, size: 0x2b88fdc
+Self decompressing the image : ########################################################################################################################################################################################################################################################################################## [OK]
+
+Smart Init is disabled. IOMEM set to: 25
+
+Using iomem percentage: 25
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 2400 Software (C2430-IK9O3S-M), Version 15.1(4)M7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Mon 16-Sep-13 05:25 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco IAD2432 (R527x) processor (revision 4.1) with 196608K/65536K bytes of memory.
+Processor board ID FHK1129F3G7
+R527x CPU at 225MHz, Implementation 40, Rev 3.1
+1 On-Board Twenty-Four FXS Analog Voice Module V2.1
+2 FastEthernet interfaces
+1 Virtual Private Network (VPN) Module
+DRAM configuration is 64 bits wide with parity disabled.
+63K bytes of non-volatile configuration memory.
+System fpga version is 250027
+System readonly fpga version is 250025
+Option for system fpga is 'system'.
+62720K bytes of ATA System CompactFlash (Read/Write)
+
+System is running with system fpga version 250027 (upgrade)
+Option set for fpga is 'system'.
+
+ port 0 already participated
+
+ port 1 already participated
+
+ Warning: MD5 encryption will be deprecated soon.Please move to SHA256 encryption.
+ Warning: This CLI will be deprecated soon. Please move to radius server <name> CLI.
+ Warning: This CLI will be deprecated soon. Please move to radius server <name> CLI.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!Following voice command is enabled:                    !!
+!!  voice service voip                                   !!
+!!   ip address trusted authenticate                     !!
+!!                                                       !!
+!!The command enables the ip address authentication      !!
+!!on incoming H.323 or SIP trunk calls for toll fraud    !!
+!!prevention supports.                                   !!
+!!                                                       !!
+!!Please use "show ip address trusted list" command      !!
+!!to display a list of valid ip addresses for incoming   !!
+!!H.323 or SIP trunk calls.                              !!
+!!                                                       !!
+!!Additional valid ip addresses can be added via the     !!
+!!following command line:                                !!
+!!  voice service voip                                   !!
+!!   ip address trusted list                             !!
+!!    ipv4 <ipv4-address> [<ipv4 network-mask>]          !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Translating "cisco-backup.smartvoice.telepacific.com"...domain server (65.60.126.152)
+
+
+Press RETURN to get started!
+
+ (208.57.21.152)
+
+
+rommon 2 > confreg
+
+
+           Configuration Summary
+   (Virtual Configuration Register: 0x2102)
+enabled are:
+load rom after netboot fails
+console baud: 9600
+boot: image specified by the boot system commands
+      or default to: cisco2-c2400
+```
