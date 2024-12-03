@@ -1,3 +1,13 @@
+# Cisco AS5300
+
+## Notes
+
+* AS5300 Mica modem info - https://community.cisco.com/t5/other-network-architecture-subjects/56k-dial-up-from-remote/m-p/163762
+* AS5300 Troubleshooting V.92 Modems - https://www.cisco.com/c/en/us/support/docs/dial-access/asynchronous-connections/21360-v92-21360.html
+
+## Output
+
+```
 Router>show modem version
 
 
@@ -119,3 +129,4 @@ Manufacture Cookie Info:
  Board Hardware Version 1.0, Item Number 73-2522-3,
  Board Revision A48, Serial Number 14112436,
  PLD/ISP Version 1.0, Manufacture Date 5-Sep-1999.
+```
